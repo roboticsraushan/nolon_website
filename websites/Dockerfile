@@ -4,6 +4,9 @@ FROM node:20-alpine AS deps
 # Set working directory
 WORKDIR /app
 
+# Install dependencies required for node-gyp and Three.js
+RUN apk add --no-cache python3 make g++ libc6-compat
+
 # Copy package files
 COPY package*.json ./
 
@@ -13,6 +16,9 @@ RUN npm install --legacy-peer-deps
 # Development stage
 FROM node:20-alpine AS development
 WORKDIR /app
+
+# Install runtime dependencies for Three.js
+RUN apk add --no-cache libc6-compat
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
@@ -39,6 +45,9 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
+
+# Install runtime dependencies for Three.js
+RUN apk add --no-cache libc6-compat
 
 # Create non-root user
 RUN addgroup --system --gid 1001 nodejs

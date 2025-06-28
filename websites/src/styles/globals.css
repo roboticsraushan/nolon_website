@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,17 +18,59 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-end-rgb));
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.section-container {
+  min-height: 100vh;
+  padding: 80px 0;
 }
 
 .hero-section {
   position: relative;
-  background-color: #1e40af;
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.anurati-font {
+  font-family: 'Anurati', sans-serif;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
 }
 
 #tsparticles {
+  position: absolute !important;
   width: 100% !important;
   height: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-robot {
+  animation: float 6s ease-in-out infinite;
 } 

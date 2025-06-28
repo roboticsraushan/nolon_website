@@ -19,12 +19,6 @@ export default function ParticleBackground() {
       loaded={particlesLoaded}
       options={{
         fullScreen: false,
-        style: {
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          zIndex: 1
-        },
         background: {
           color: "transparent"
         },
@@ -75,9 +69,9 @@ export default function ParticleBackground() {
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 1000,
             },
-            value: 100,
+            value: 120,
           },
           opacity: {
             value: 0.8,
@@ -91,7 +85,7 @@ export default function ParticleBackground() {
         },
         detectRetina: true,
       }}
-      className="absolute inset-0 z-0"
+      className="absolute inset-0"
     />
   );
 } 
