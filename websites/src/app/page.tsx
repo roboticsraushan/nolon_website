@@ -30,7 +30,7 @@ export default function Home() {
         
         {/* Navigation Buttons */}
         <div className="absolute top-8 right-8 z-20">
-          <div className="flex flex-col space-y-3">
+          <div className="flex space-x-3">
             <button
               onClick={() => scrollToSection('product-showcase')}
               className="group relative px-6 py-3 bg-black/20 backdrop-blur-md border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105"
@@ -61,6 +61,14 @@ export default function Home() {
             >
               <span className="relative z-10">Contact</span>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+
+            <button
+              onClick={() => scrollToSection('careers')}
+              className="group relative px-6 py-3 bg-black/20 backdrop-blur-md border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105"
+            >
+              <span className="relative z-10">Careers</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
         </div>
@@ -289,12 +297,89 @@ export default function Home() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                      className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 border border-gray-600"
                     >
                       Send Message
                     </button>
                   </form>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section id="careers" className="section-container bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            Join Our Team
+          </h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Why Join Us */}
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800">
+                <h3 className="text-2xl font-bold text-white mb-6">Why Join Nolon AI?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🚀</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Cutting-Edge Technology</h4>
+                      <p className="text-gray-300">Work with the latest robotics and AI technologies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🌍</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Real Impact</h4>
+                      <p className="text-gray-300">Help revolutionize sanitation worldwide</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">👥</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Great Team</h4>
+                      <p className="text-gray-300">Collaborate with passionate engineers and innovators</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">📈</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Growth Opportunities</h4>
+                      <p className="text-gray-300">Fast-paced startup environment with rapid career growth</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Open Positions */}
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800">
+                <h3 className="text-2xl font-bold text-white mb-6">Open Positions</h3>
+                <div className="space-y-4">
+                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
+                    <h4 className="text-white font-semibold text-lg">Senior Robotics Engineer</h4>
+                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
+                    <p className="text-gray-400 text-sm">Lead development of autonomous cleaning robots</p>
+                  </div>
+                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
+                    <h4 className="text-white font-semibold text-lg">Computer Vision Engineer</h4>
+                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
+                    <p className="text-gray-400 text-sm">Develop LiDAR and sensor fusion algorithms</p>
+                  </div>
+                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
+                    <h4 className="text-white font-semibold text-lg">Software Engineer</h4>
+                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
+                    <p className="text-gray-400 text-sm">Build backend systems and IoT infrastructure</p>
+                  </div>
+                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
+                    <h4 className="text-white font-semibold text-lg">Product Manager</h4>
+                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
+                    <p className="text-gray-400 text-sm">Drive product strategy and customer success</p>
+                  </div>
+                </div>
+                <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                  View All Positions
+                </button>
               </div>
             </div>
           </div>
@@ -388,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* Careers Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Careers</h2>
@@ -404,10 +489,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-black-1900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>Be a part of the Future of work!</p>
         </div>
