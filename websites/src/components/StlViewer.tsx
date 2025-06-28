@@ -64,7 +64,7 @@ export default function StlViewer({ url, className = '' }: StlViewerProps) {
         <OrbitControls
           autoRotate
           autoRotateSpeed={0.5}
-          enableZoom={true}
+          enableZoom={false}
           enablePan={true}
           minDistance={300}
           maxDistance={800}

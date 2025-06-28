@@ -492,9 +492,9 @@ export default function Home() {
       </section> */}
 
       {/* Footer */}
-      <footer className="bg-black-1900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>Be a part of the Future of work!</p>
+      <footer className="bg-black-900 text-white py-8">
+        <div className="container mx-auto px-10 text-center">
+          <h1 className="text-4xl font-bold">Be a part of the Future of work!</h1>
         </div>
       </footer>
     </main>
