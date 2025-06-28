@@ -56,6 +56,139 @@ A modern, interactive website showcasing Nolon AI's autonomous cleaning robots. 
 - **Nginx**: Reverse proxy with SSL termination
 - **Prometheus & Grafana**: Monitoring and observability
 
+## 📋 Prerequisites & Installation
+
+### System Requirements
+- **Operating System**: Linux, macOS, or Windows
+- **RAM**: Minimum 4GB (8GB recommended for Docker)
+- **Storage**: At least 2GB free space
+- **Network**: Internet connection for package downloads
+
+### Required Software
+
+#### 1. Node.js Installation
+```bash
+# Ubuntu/Debian
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# macOS (using Homebrew)
+brew install node@20
+
+# Windows
+# Download from https://nodejs.org/en/download/
+
+# Verify installation
+node --version  # Should be v20.x.x
+npm --version   # Should be 8.x.x or higher
+```
+
+#### 2. Docker Installation
+**Docker Installation**
+
+```
+# Update packages
+sudo apt-get update
+
+# Install prerequisites
+sudo apt-get install -y ca-certificates curl gnupg
+
+# Add Docker's official GPG key
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add Docker repository
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+**Ubuntu/Debian:**
+```bash
+# Update package index
+sudo apt-get update
+
+# Install prerequisites
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Set up stable repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker Engine
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# Add user to docker group (optional, for non-root access)
+sudo usermod -aG docker $USER
+# Log out and back in for group changes to take effect
+```
+
+**macOS:**
+```bash
+# Using Homebrew
+brew install --cask docker
+
+# Or download Docker Desktop from https://www.docker.com/products/docker-desktop
+```
+
+**Windows:**
+```bash
+# Download Docker Desktop from https://www.docker.com/products/docker-desktop
+# Follow the installation wizard
+```
+
+**Verify Docker Installation:**
+```bash
+docker --version
+docker compose version
+```
+
+#### 3. Git Installation
+```bash
+# Ubuntu/Debian
+sudo apt-get install git
+
+# macOS
+brew install git
+
+# Windows
+# Download from https://git-scm.com/download/win
+
+# Verify installation
+git --version
+```
+
+#### 4. OpenSSL (for SSL certificates)
+```bash
+# Ubuntu/Debian
+sudo apt-get install openssl
+
+# macOS
+brew install openssl
+
+# Windows
+# Usually pre-installed, or download from https://slproweb.com/products/Win32OpenSSL.html
+
+# Verify installation
+openssl version
+```
+
 ## 📁 Project Structure
 
 ```
@@ -101,12 +234,7 @@ websites/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js 20 or higher
-- npm or yarn
-- Docker (optional, for containerized development)
-
-### Local Development
+### Local Development (Without Docker)
 
 1. **Clone the repository**
    ```bash
@@ -131,12 +259,12 @@ websites/
 
 1. **Build and run with Docker Compose**
    ```bash
-   docker-compose up web-dev
+   docker compose up web-dev
    ```
 
 2. **For production build**
    ```bash
-   docker-compose up web-prod
+   docker compose up web-prod
    ```
 
 ### Available Scripts
@@ -150,7 +278,12 @@ websites/
 
 ### Quick Deployment (Recommended)
 
-1. **Run the deployment script**
+1. **Make deployment script executable**
+   ```bash
+   chmod +x deploy.sh
+   ```
+
+2. **Run the deployment script**
    ```bash
    ./deploy.sh
    ```
@@ -161,9 +294,10 @@ websites/
    - Set up Nginx reverse proxy
    - Perform health checks
 
-2. **Access your website**
-   - HTTPS: https://your-domain.com
-   - Health check: https://your-domain.com/health
+3. **Access your website**
+   - HTTPS: https://localhost
+   - HTTP: http://localhost (redirects to HTTPS)
+   - Health check: https://localhost/health
 
 ### Manual Production Deployment
 
@@ -175,13 +309,13 @@ websites/
 
 2. **Deploy with production compose**
    ```bash
-   docker-compose -f docker-compose.prod.yml up -d --build
+   docker compose -f docker-compose.prod.yml up -d --build
    ```
 
 3. **Check service status**
    ```bash
-   docker-compose -f docker-compose.prod.yml ps
-   docker-compose -f docker-compose.prod.yml logs -f
+   docker compose -f docker-compose.prod.yml ps
+   docker compose -f docker-compose.prod.yml logs -f
    ```
 
 ### SSL Certificate Setup (Production)
@@ -201,7 +335,7 @@ websites/
 
 1. **Start monitoring stack**
    ```bash
-   docker-compose -f docker-compose.monitoring.yml up -d
+   docker compose -f docker-compose.monitoring.yml up -d
    ```
 
 2. **Access monitoring dashboards**
@@ -295,30 +429,53 @@ The website is fully responsive and optimized for:
 ### Logs
 ```bash
 # Application logs
-docker-compose -f docker-compose.prod.yml logs -f web
+docker compose -f docker-compose.prod.yml logs -f web
 
 # Nginx logs
-docker-compose -f docker-compose.prod.yml logs -f nginx
+docker compose -f docker-compose.prod.yml logs -f nginx
 
 # All services
-docker-compose -f docker-compose.prod.yml logs -f
+docker compose -f docker-compose.prod.yml logs -f
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the ISC License.
-
-## 🆘 Troubleshooting
+## 🛠️ Troubleshooting
 
 ### Common Issues
+
+**Docker Installation Issues**
+```bash
+# Check Docker service status
+sudo systemctl status docker
+
+# Start Docker service
+sudo systemctl start docker
+
+# Enable Docker service on boot
+sudo systemctl enable docker
+
+# Check Docker permissions
+docker run hello-world
+```
+
+**Port Conflicts**
+```bash
+# Check what's using port 3000
+sudo lsof -i :3000
+
+# Check what's using port 80/443
+sudo lsof -i :80
+sudo lsof -i :443
+```
+
+**SSL Certificate Issues**
+```bash
+# Check certificate validity
+openssl x509 -in ./ssl/cert.pem -text -noout
+
+# Verify certificate and key match
+openssl x509 -noout -modulus -in ./ssl/cert.pem | openssl md5
+openssl rsa -noout -modulus -in ./ssl/key.pem | openssl md5
+```
 
 **3D Model Not Loading**
 - Ensure the STL file path is correct in `public/models/`
@@ -340,15 +497,36 @@ This project is licensed under the ISC License.
 - Clear Docker cache: `docker system prune -a`
 - Check for port conflicts
 
-**SSL Certificate Issues**
-- Verify certificate files are in `./ssl/` directory
-- Check certificate validity and expiration
-- Ensure proper file permissions
-
 **Nginx Configuration**
 - Validate nginx config: `docker exec nginx nginx -t`
 - Check nginx logs for errors
 - Verify upstream service is accessible
+
+## 🔒 Security Considerations
+
+### Production Security
+- **SSL Certificates**: Use valid SSL certificates from trusted CAs
+- **Environment Variables**: Never commit sensitive data to version control
+- **Docker Security**: Run containers as non-root users
+- **Rate Limiting**: Configure appropriate rate limits in Nginx
+- **Security Headers**: Ensure all security headers are properly configured
+
+### Development Security
+- **Self-signed Certificates**: Only for local development
+- **Port Exposure**: Be careful with port forwarding in development
+- **Dependencies**: Regularly update dependencies for security patches
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the ISC License.
 
 ## 📞 Support
 
