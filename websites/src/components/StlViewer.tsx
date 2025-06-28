@@ -55,7 +55,6 @@ export default function StlViewer({ url, className = '' }: StlViewerProps) {
         <Stage
           environment="city"
           intensity={0.5}
-          contactShadow={{ blur: 2, height: 5, opacity: 0.5, far: 5 }}
           adjustCamera={false}
           preset="rembrandt"
         >
