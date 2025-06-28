@@ -1,0 +1,78 @@
+# Dependencies
+websites/node_modules/*
+websites/.pnp
+websites/.pnp.js
+websites/.yarn/install-state.gz
+
+# Testing
+websites/coverage
+
+# Next.js
+websites/.next/
+websites/out/
+
+# Production
+websites/build
+websites/dist
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+websites/npm-debug.log*
+websites/yarn-debug.log*
+websites/yarn-error.log*
+
+# Local env files
+websites/.env*.local
+websites/.env
+websites/.env.local
+websites/.env.development.local
+websites/.env.test.local
+websites/.env.production.local
+
+# Vercel
+websites/.vercel
+
+# TypeScript
+websites/*.tsbuildinfo
+websites/next-env.d.ts
+
+# IDE and Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+websites/.docker/
+websites/docker-compose.override.yml
+
+# Logs
+websites/logs
+websites/*.log
+
+# Cache directories
+.npm
+.eslintcache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+websites/.yarn-integrity 
