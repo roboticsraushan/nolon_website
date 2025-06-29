@@ -1,25 +1,18 @@
 version: '3.8'
 
 services:
-  # Production Next.js App
+  # Next.js application
   web:
     build:
       context: .
       target: runner
     environment:
       - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
     restart: unless-stopped
     networks:
       - app-network
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
 
-  # Nginx Reverse Proxy
+  # Nginx reverse proxy with HTTPS
   nginx:
     image: nginx:alpine
     ports:
