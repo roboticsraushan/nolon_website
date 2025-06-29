@@ -28,11 +28,20 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile-optimized section containers */
 .section-container {
   min-height: 100vh;
-  padding: 80px 0;
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 80px 0;
+  }
 }
 
 .hero-section {
@@ -41,12 +50,26 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 0;
+  }
 }
 
 .anurati-font {
   font-family: 'Anurati', sans-serif;
   letter-spacing: 0.5em;
   text-transform: uppercase;
+}
+
+/* Mobile-optimized letter spacing */
+@media (max-width: 640px) {
+  .anurati-font {
+    letter-spacing: 0.3em;
+  }
 }
 
 #tsparticles {
@@ -73,6 +96,13 @@ body {
 
 .floating-robot {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Mobile-optimized floating animation */
+@media (max-width: 768px) {
+  .floating-robot {
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 /* Hero Message Animations */
@@ -108,6 +138,16 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
+/* Mobile-optimized hover effects */
+@media (max-width: 768px) {
+  .hero-hook:hover,
+  .hero-value:hover,
+  .hero-quote:hover {
+    transform: none;
+    animation: none;
+  }
+}
+
 /* Gradient text animation */
 @keyframes gradientShift {
   0% {
@@ -128,4 +168,43 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 3s ease infinite;
+}
+
+/* Mobile-optimized touch targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Mobile-optimized spacing */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile-optimized grid layouts */
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
+}
+
+/* Mobile-optimized card hover effects */
+@media (max-width: 768px) {
+  .group:hover {
+    transform: none !important;
+    scale: none !important;
+  }
+  
+  .group:active {
+    transform: scale(0.98) !important;
+  }
 } 
