@@ -32,22 +32,6 @@ export default function Home() {
         <div className="absolute top-8 right-8 z-20">
           <div className="flex space-x-3">
             <button
-              onClick={() => scrollToSection('product-showcase')}
-              className="group relative px-6 py-3 bg-black/20 backdrop-blur-md border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105"
-            >
-              <span className="relative z-10">Product</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            
-            <button
-              onClick={() => scrollToSection('video-section')}
-              className="group relative px-6 py-3 bg-black/20 backdrop-blur-md border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105"
-            >
-              <span className="relative z-10">Video</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            
-            <button
               onClick={() => scrollToSection('specifications')}
               className="group relative px-6 py-3 bg-black/20 backdrop-blur-md border border-white/20 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105"
             >
@@ -80,9 +64,36 @@ export default function Home() {
                 <h1 className="anurati-font text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                   NOLON AI
                 </h1>
-                <p className="text-xl md:text-2xl mb-8">
-                  Revolutionizing Sanitation with Autonomous Intelligence
-                </p>
+            
+                {/* Innovative Hero Message */}
+                <div className="space-y-4">
+                  {/* Main Hook */}
+                  <div className="hero-hook bg-gradient-to-r from-red-500/20 via-orange-500/20 to-yellow-500/20 backdrop-blur-md rounded-xl p-4 border border-white/10 transition-all duration-300 hover:border-white/30">
+                    <p className="text-lg md:text-xl font-semibold text-white text-center">
+                      Life is too short to clean toilets!
+                    </p>
+                  </div>
+                  
+                  {/* Value Proposition */}
+                  <div className="hero-value bg-black/30 backdrop-blur-md rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-black/40">
+                    <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+                      Enter <span className="gradient-text font-semibold">nolon.ai</span>, 
+                      <span className="text-yellow-400 font-semibold"> 25 years</span> of combined experience in Robotics, Operations & Facility Management, 
+                      Built a fleet of autonomous robots that clean <span className="text-green-400 font-semibold">everything</span>: 
+                      floors, commodes, mirrors, basins & walls.
+                    </p>
+                  </div>
+
+                  {/* Joanna's Quote - Emotional Impact */}
+                  <div className="hero-quote bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105">
+                    <blockquote className="text-lg md:text-xl text-white italic text-center leading-relaxed">
+                      "I want AI to do my laundry and dishes so that I can do art and writing"
+                    </blockquote>
+                    <footer className="text-white/80 text-center mt-3 text-sm md:text-base">
+                      — Joanna Maciejewska, Author & Gaming Enthusiast
+                    </footer>
+                  </div>
+                </div>
               </div>
               <div className="lg:w-1/2 flex justify-center z-10">
                 <div className="floating-robot">
@@ -101,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* Product Showcase Section */}
-      <section id="product-showcase" className="section-container">
+      {/* <section id="product-showcase" className="section-container">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Interactive Product Showcase
@@ -113,10 +124,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Video Section */}
-      <section id="video-section" className="section-container">
+      {/* <section id="video-section" className="section-container">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Robot in Action
@@ -138,277 +149,448 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Specifications & Contact Section */}
-      <section id="specifications" className="section-container">
+      </section> */}
+      
+      {/* Contact Section */}
+      <section id="contact" className="section-container">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
-            Technical Specifications
+            Get In Touch
           </h2>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid gap-6">
-              {/* Row 1 */}
-              <div className="grid md:grid-cols-3 gap-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Contact Info */}
+              <div className="space-y-6">
                 <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="text-2xl mb-3">🚀 What We Do</div>
-                  <h3 className="text-xl font-bold text-white mb-2">1. Cleans Inside Toilets</h3>
-                  <p className="text-gray-300">Tight, gross, curved spaces</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="text-2xl mb-3">🧠 Why It's Hard</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Complex Challenges</h3>
-                  <p className="text-gray-300">Privacy, fluids, slippery floors</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <div className="text-2xl mb-3">💪 Our Edge</div>
-                  <h3 className="text-xl font-bold text-white mb-2">6-DOF Robotic Arm</h3>
-                  <p className="text-gray-300">Custom tools + LiDAR mapping</p>
-                </div>
-              </div>
-
-              {/* Row 2 */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">2. No Cameras, No Creep</h3>
-                  <p className="text-gray-300">Privacy in restrooms is critical</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Privacy First</h3>
-                  <p className="text-gray-300">Respect for user privacy</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">LiDAR-Only 3D Mapping</h3>
-                  <p className="text-gray-300">No visual data collection</p>
-                </div>
-              </div>
-
-              {/* Row 3 */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">3. Full Clean Cycle</h3>
-                  <p className="text-gray-300">Scrub + Spray + Rinse + Dry = 🤯</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Complete Process</h3>
-                  <p className="text-gray-300">End-to-end cleaning solution</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Smart Task Planner</h3>
-                  <p className="text-gray-300">Advanced sensors + AI planning</p>
-                </div>
-              </div>
-
-              {/* Row 4 */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">4. Real Dirt, Not Lab Demos</h3>
-                  <p className="text-gray-300">Fluids, stains, sticky messes</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Real-World Testing</h3>
-                  <p className="text-gray-300">Built for actual conditions</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Built for Real Grime</h3>
-                  <p className="text-gray-300">Tested in actual environments</p>
-                </div>
-              </div>
-
-              {/* Row 5 */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">5. Moves on Its Own</h3>
-                  <p className="text-gray-300">Slippery floors + partitions</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">Autonomous Navigation</h3>
-                  <p className="text-gray-300">Handles complex environments</p>
-                </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-xl font-bold text-white mb-2">AMR with LiDAR SLAM</h3>
-                  <p className="text-gray-300">Advanced mapping & navigation</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Section - Fused with Specifications */}
-          <div id="contact" className="mt-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
-              Get In Touch
-            </h2>
-            <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Contact Info */}
-                <div className="space-y-6">
-                  <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                    <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="text-2xl">📧</div>
-                        <div>
-                          <p className="text-white font-semibold">Email</p>
-                          <p className="text-gray-300">hello@nolonai.com</p>
-                        </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="text-2xl">📧</div>
+                      <div>
+                        <p className="text-white font-semibold">Email</p>
+                        <p className="text-gray-300">hello@nolonai.com</p>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="text-2xl">📱</div>
-                        <div>
-                          <p className="text-white font-semibold">Phone</p>
-                          <p className="text-gray-300">+918884685982</p>
-                        </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="text-2xl">📱</div>
+                      <div>
+                        <p className="text-white font-semibold">Phone</p>
+                        <p className="text-gray-300">+918884685982</p>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="text-2xl">📍</div>
-                        <div>
-                          <p className="text-white font-semibold">Location</p>
-                          <p className="text-gray-300">Banglore</p>
-                        </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="text-2xl">📍</div>
+                      <div>
+                        <p className="text-white font-semibold">Location</p>
+                        <p className="text-gray-300">Banglore</p>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Contact Form */}
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
-                  <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-                  <form className="space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <textarea
-                        placeholder="Your Message"
-                        rows={4}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 border border-gray-600"
-                    >
-                      Send Message
-                    </button>
-                  </form>
+              {/* Contact Form */}
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
+                <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Your Message"
+                      rows={4}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 border border-gray-600"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Why nolon.ai Section */}
+      <section id="specifications" className="section-container">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Why <span className="gradient-text">nolon.ai</span>?
+          </h2>
+          
+          {/* Team Nolon's Quote - Value Reinforcement */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="team-quote bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-md rounded-xl p-8 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105">
+              <blockquote className="text-xl md:text-2xl text-white italic text-center leading-relaxed font-medium">
+                "Our AI Robots will manage your facility, so that your employees, customers can do what they are passionate about"
+              </blockquote>
+              <footer className="text-white/80 text-center mt-4 text-lg font-semibold">
+                — Team Nolon
+              </footer>
+            </div>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid gap-8">
+              {/* Row 1 - Main Features */}
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="group bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🚀</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">End-to-end cleaning solutions</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    Comprehensive cleaning of commode, walls, floor, mirrors & wash basins
+                  </p>
+                </div>
+                
+                <div className="group bg-gradient-to-br from-green-500/10 to-blue-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20">
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧠</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Completely Autonomous</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    Cleaning without any manual intervention
+                  </p>
+                </div>
+                
+                <div className="group bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">💪</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Smart Task Planner</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    AI enabled task planning & fleet monitoring
+                  </p>
+                </div>
+              </div>
+
+              {/* Row 2 - Additional Benefits */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="group bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20">
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">⚡</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">No Setup Change</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    Seamless integration with existing infrastructure
+                  </p>
+                </div>
+                
+                <div className="group bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🛡️</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Privacy First</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    Our end to end encryption technology ensures complete privacy
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Careers Section */}
       <section id="careers" className="section-container bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
-            Join Our Team
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Join Our <span className="gradient-text">Team</span>
           </h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Why Join Us */}
-              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-6">Why Join Nolon AI?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🚀</div>
-                    <div>
-                      <h4 className="text-white font-semibold">Cutting-Edge Technology</h4>
-                      <p className="text-gray-300">Work with the latest robotics and AI technologies</p>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Why Join Us - Enhanced */}
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+                  <h3 className="text-3xl font-bold text-white mb-8 text-center">
+                    Why Join <span className="gradient-text">Nolon AI</span>?
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="text-xl text-white font-semibold mb-2">Cutting-Edge Technology</h4>
+                        <p className="text-gray-300 leading-relaxed">Work with the latest robotics, AI, and autonomous systems. Build solutions that don't exist yet.</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🌍</div>
-                    <div>
-                      <h4 className="text-white font-semibold">Real Impact</h4>
-                      <p className="text-gray-300">Help revolutionize sanitation worldwide</p>
+                    
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="text-xl text-white font-semibold mb-2">Real Impact</h4>
+                        <p className="text-gray-300 leading-relaxed">Help revolutionize sanitation worldwide. Your work directly improves millions of lives.</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">👥</div>
-                    <div>
-                      <h4 className="text-white font-semibold">Great Team</h4>
-                      <p className="text-gray-300">Collaborate with passionate engineers and innovators</p>
+                    
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="text-xl text-white font-semibold mb-2">Great Team</h4>
+                        <p className="text-gray-300 leading-relaxed">Collaborate with passionate engineers, innovators, and visionaries who share your drive.</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">📈</div>
-                    <div>
-                      <h4 className="text-white font-semibold">Growth Opportunities</h4>
-                      <p className="text-gray-300">Fast-paced startup environment with rapid career growth</p>
+                    
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-300">
+                        4
+                      </div>
+                      <div>
+                        <h4 className="text-xl text-white font-semibold mb-2">Growth Opportunities</h4>
+                        <p className="text-gray-300 leading-relaxed">Fast-paced startup environment with rapid career growth and learning opportunities.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Open Positions */}
-              <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-6">Open Positions</h3>
-                <div className="space-y-4">
-                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
-                    <h4 className="text-white font-semibold text-lg">Senior Robotics Engineer</h4>
-                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
-                    <p className="text-gray-400 text-sm">Lead development of autonomous cleaning robots</p>
-                  </div>
-                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
-                    <h4 className="text-white font-semibold text-lg">Computer Vision Engineer</h4>
-                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
-                    <p className="text-gray-400 text-sm">Develop LiDAR and sensor fusion algorithms</p>
-                  </div>
-                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
-                    <h4 className="text-white font-semibold text-lg">Software Engineer</h4>
-                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
-                    <p className="text-gray-400 text-sm">Build backend systems and IoT infrastructure</p>
-                  </div>
-                  <div className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800/30 transition-colors">
-                    <h4 className="text-white font-semibold text-lg">Product Manager</h4>
-                    <p className="text-gray-300 mb-2">Full-time • Bangalore</p>
-                    <p className="text-gray-400 text-sm">Drive product strategy and customer success</p>
+              {/* Technical Diagram */}
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">Our Tech Stack</h3>
+                  
+                  {/* Technical Architecture Diagram */}
+                  <div className="space-y-6">
+                    {/* AI/ML Layer */}
+                    <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-purple-500/30">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="text-2xl">🤖</div>
+                        <h4 className="text-white font-semibold">AI & Machine Learning</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm">Computer Vision, NLP, Reinforcement Learning</p>
+                    </div>
+                    
+                    {/* Robotics Layer */}
+                    <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl p-4 border border-blue-500/30">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="text-2xl">⚙️</div>
+                        <h4 className="text-white font-semibold">Robotics & Control</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm">6-DOF Arms, SLAM, Path Planning, Sensor Fusion</p>
+                    </div>
+                    
+                    {/* Software Layer */}
+                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-500/30">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="text-2xl">💻</div>
+                        <h4 className="text-white font-semibold">Software & Infrastructure</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm">Cloud Computing, IoT, Real-time Systems, DevOps</p>
+                    </div>
+                    
+                    {/* Hardware Layer */}
+                    <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl p-4 border border-orange-500/30">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="text-2xl">🔧</div>
+                        <h4 className="text-white font-semibold">Hardware & Sensors</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm">LiDAR, Cameras, Actuators, Embedded Systems</p>
+                    </div>
                   </div>
                 </div>
-                <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                  View All Positions
-                </button>
+              </div>
+            </div>
+
+            {/* Open Positions - Enhanced */}
+            <div className="mt-16">
+              <h3 className="text-3xl font-bold text-white text-center mb-12">
+                Open <span className="gradient-text">Positions</span>
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                {/* Robotics Software Engineer */}
+                <div className="group bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className="text-3xl mb-4">🤖</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Robotics Software Engineer</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">C++, Python, ROS Navigation, SLAM algorithms, sensor fusion (LiDAR/camera/IMU), Linux, sensor integration, system debugging</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Perception Engineer */}
+                <div className="group bg-gradient-to-br from-green-500/10 to-blue-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20">
+                  <div className="text-3xl mb-4">👁️</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Perception Engineer</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Python, OpenCV, TensorFlow/PyTorch, C++, image processing, ML/DL</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Embedded/Control Systems Engineer */}
+                <div className="group bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                  <div className="text-3xl mb-4">⚙️</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Embedded/Control Systems Engineer</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Embedded C/C++, motor control, electronics integration, Battery mgmt, water control, pump operating</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Mechanical Integration Engineer */}
+                <div className="group bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20">
+                  <div className="text-3xl mb-4">🔧</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Mechanical Integration Engineer</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Mechanical assembly, CAD tools (SolidWorks/CAD), sensor/mechanism calibration, testing</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* UI/UX Designer */}
+                <div className="group bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+                  <div className="text-3xl mb-4">🎨</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">UI/UX Designer (Dashboard)</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">UI/UX design (Figma, Sketch), front-end (HTML/CSS/JS), user research, prototyping</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Project Manager */}
+                <div className="group bg-gradient-to-br from-indigo-500/10 to-purple-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20">
+                  <div className="text-3xl mb-4">📊</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Project Manager (Technical)</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Project management (Agile/Scrum), communication, scheduling, risk management, leadership</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Fabrication Expert */}
+                <div className="group bg-gradient-to-br from-teal-500/10 to-green-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20">
+                  <div className="text-3xl mb-4">🏭</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Fabrication Expert</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">SolidWorks/Creo, mechanical design, tolerancing, materials, actuators</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Electronics Engineer */}
+                <div className="group bg-gradient-to-br from-pink-500/10 to-red-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20">
+                  <div className="text-3xl mb-4">⚡</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Electronics Engineer</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Circuit design, PCB (Altium/KiCad), power systems, EMI compliance</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
+
+                {/* Hardware Systems Architect */}
+                <div className="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:border-white/30 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                  <div className="text-3xl mb-4">🏗️</div>
+                  <h4 className="text-white font-semibold text-lg mb-2">Hardware Systems Architect</h4>
+                  <p className="text-gray-300 mb-3">Full-time • Bangalore</p>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-sm mb-2"><strong>Key Skills:</strong></p>
+                    <p className="text-gray-400 text-xs leading-relaxed">Robotics architecture, hardware-software interfacing, BOM planning</p>
+                  </div>
+                  <a 
+                    href="https://wellfound.com/l/2BrzyG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm text-center"
+                  >
+                    Apply on Wellfound
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <blockquote className="text-2xl text-center mb-12">
-              "I want AI to do my laundry and dishes so that I can do art and writing"
-              <footer className="text-lg mt-4">
-                - Joanna Maciejewska, Author & gaming enthusiast
-              </footer>
-            </blockquote>
-            <blockquote className="text-2xl text-center">
-              "Our AI Robots will manage your facility, so that your employees, 
-              customers can do what they are passionate about"
-              <footer className="text-lg mt-4">
-                - Team Nolon
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section> */}
-
       {/* Contact Form */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
@@ -470,26 +652,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Careers Section */}
-      {/* <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Careers</h2>
-            <p className="text-xl mb-6">
-              We are a team of passionate folks on a mission to change the way the world works. 
-              Come join us and be a part of the future, now!
-            </p>
-            <a
-              href="mailto:hello@nolon.ai"
-              className="inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
       </section> */}
+
 
       {/* Footer */}
       <footer className="bg-black-900 text-white py-8">
