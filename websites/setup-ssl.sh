@@ -7,7 +7,7 @@ mkdir -p ssl
 
 # Check if we have a domain name
 DOMAIN="nolon.ai"
-IP_ADDRESS="34.44.243.178"
+IP_ADDRESS="34.27.234.213"
 
 echo "📋 Domain: $DOMAIN"
 echo "🌐 IP Address: $IP_ADDRESS"
